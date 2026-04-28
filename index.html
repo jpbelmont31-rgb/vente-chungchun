@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Chung Chun Rice Dog + Chicken Plus — Sainte-Foy, Québec | À vendre</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EDEAE4;
+    --surface: #FFFFFF;
+    --surface-2: #E8E5DE;
+    --border: #D4D0C8;
+    --text: #111111;
+    --text-muted: #4A4540;
+    --accent: #D42E0F;
+    --accent-light: #D42E0F15;
+    --gold: #C08800;
+    --gold-light: #C0880015;
+    --green: #0EA05C;
+    --green-light: #0EA05C15;
+    --blue: #3B82F6;
+    --dark: #0F0D0B;
+    --dark-surface: #1A1714;
+    --dark-border: #2E2A25;
+    --dark-text: #F5F2ED;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* LANGUAGE TABS */
+  .lang-toggle {
+    position: fixed; top: 20px; right: 20px; z-index: 1000;
+    display: flex; gap: 0; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .lang-btn {
+    padding: 8px 18px; border: none; cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600;
+    transition: all 0.3s;
+  }
+  .lang-btn.active { background: var(--accent); color: #fff; }
+  .lang-btn:not(.active) { background: #fff; color: var(--text); }
+  .lang-btn:hover:not(.active) { background: var(--surface-2); }
+
+  .lang-fr, .lang-en { display: none; }
+  body.show-fr .lang-fr { display: block; }
+  body.show-en .lang-en { display: block; }
+  body.show-fr .lang-fr.inline { display: inline; }
+  body.show-en .lang-en.inline { display: inline; }
+
+  /* HERO */
+  .hero {
+    position: relative; min-height: 90vh;
+    background: linear-gradient(135deg, #0F0D0B 0%, #1C1310 40%, #2D1A0F 100%);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; padding: 60px 40px;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url('https://chungchunricedog.ca/wp-content/uploads/2025/11/LINE-UP-Hamilton-ON-2.jpg') center/cover;
+    opacity: 0.18; filter: blur(2px);
+  }
+  .hero-content { position: relative; z-index: 1; text-align: center; max-width: 900px; }
+  .hero-logos {
+    display: flex; justify-content: center; align-items: center; gap: 32px;
+    margin-bottom: 40px; flex-wrap: wrap;
+  }
+  .hero-logos img { height: 95px; filter: drop-shadow(0 0 12px rgba(255,255,255,0.6)); }
+  .hero-logos .divider {
+    width: 2px; height: 65px; background: rgba(255,255,255,0.4); border-radius: 2px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(212,69,26,0.2); border: 1px solid rgba(212,69,26,0.4);
+    border-radius: 100px; padding: 6px 20px; font-size: 12px; font-weight: 600;
+    color: #FF6B35; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: clamp(36px, 6vw, 64px); font-weight: 400; line-height: 1.1;
+    color: #fff; margin-bottom: 20px;
+  }
+  .hero h1 em { color: #FF6B35; font-style: normal; font-weight: 800; }
+  .hero-sub { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 650px; margin: 0 auto 36px; }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-value {
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 36px; color: #FF6B35; line-height: 1;
+  }
+  .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 6px; }
+
+  /* BROKER BAR */
+  .broker-bar {
+    background: var(--accent); color: #fff; text-align: center;
+    padding: 14px 40px; font-size: 14px; font-weight: 500;
+  }
+  .broker-bar a { color: #fff; text-decoration: underline; }
+
+  /* SECTIONS */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+  section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  .section-label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2.5px; color: var(--accent); margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: clamp(28px, 4vw, 40px); font-weight: 400;
+    margin-bottom: 36px; line-height: 1.2;
+  }
+
+  /* PHOTO GALLERY */
+  .gallery {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px; margin: 32px 0;
+  }
+  .gallery-item {
+    border-radius: 16px; overflow: hidden; position: relative;
+    aspect-ratio: 3/4; background: var(--surface-2);
+  }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.05); }
+  .gallery-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    padding: 20px 16px 14px; color: #fff; font-size: 13px; font-weight: 600;
+  }
+
+  /* FOOD GRID */
+  .food-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; margin: 32px 0;
+  }
+  .food-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden; text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .food-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .food-card img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #FFF8F0; padding: 12px; }
+  .food-card-info { padding: 14px; }
+  .food-card-name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+  .food-card-price { font-size: 13px; color: var(--accent); font-weight: 600; }
+
+  /* BRAND SECTION */
+  .brand-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0;
+  }
+  @media (max-width: 768px) { .brand-row { grid-template-columns: 1fr; } }
+  .brand-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 20px; padding: 36px; position: relative; overflow: hidden;
+  }
+  .brand-card.cc { border-top: 4px solid var(--accent); }
+  .brand-card.cp { border-top: 4px solid var(--gold); }
+  .brand-card h3 {
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 24px;
+    margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
+  }
+  .brand-card .stat-row {
+    display: flex; justify-content: space-between; padding: 10px 0;
+    border-bottom: 1px solid var(--border); font-size: 14px;
+  }
+  .brand-card .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--text-muted); }
+  .stat-value { font-weight: 600; }
+
+  /* HIGHLIGHTS */
+  .highlights {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px; margin: 32px 0;
+  }
+  .highlight-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px; text-align: center;
+    transition: transform 0.2s;
+  }
+  .highlight-card:hover { transform: translateY(-2px); }
+  .highlight-icon { font-size: 36px; margin-bottom: 12px; }
+  .highlight-value {
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 32px;
+    color: var(--accent); margin-bottom: 4px;
+  }
+  .highlight-label { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+
+  /* INFO BLOCKS */
+  .info-block {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 32px; margin-bottom: 20px;
+  }
+  .info-block h3 {
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 22px;
+    margin-bottom: 14px;
+  }
+  .info-block p { color: var(--text-muted); font-size: 14px; margin-bottom: 10px; line-height: 1.8; }
+  .info-block p:last-child { margin-bottom: 0; }
+
+  /* CTA BOX */
+  .cta-box {
+    background: linear-gradient(135deg, #0F0D0B, #2D1A0F);
+    border-radius: 20px; padding: 48px; text-align: center; margin: 40px 0;
+    color: #fff;
+  }
+  .cta-box h3 {
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 32px; margin-bottom: 12px;
+  }
+  .cta-box p { color: rgba(255,255,255,0.7); font-size: 16px; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .cta-btn {
+    display: inline-flex; padding: 14px 36px; background: var(--accent);
+    color: #fff; border-radius: 100px; font-weight: 600; font-size: 15px;
+    text-decoration: none; transition: transform 0.2s;
+  }
+  .cta-btn:hover { transform: scale(1.05); }
+
+  /* TABLE */
+  .data-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+  .data-table th {
+    text-align: left; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--text-muted); padding: 12px 16px;
+    border-bottom: 2px solid var(--border); font-weight: 700;
+  }
+  .data-table td {
+    padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--surface-2); }
+  .data-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .tag {
+    display: inline-flex; padding: 3px 10px; border-radius: 100px;
+    font-size: 12px; font-weight: 600;
+  }
+  .tag-green { background: var(--green-light); color: var(--green); }
+  .tag-accent { background: var(--accent-light); color: var(--accent); }
+  .tag-gold { background: var(--gold-light); color: var(--gold); }
+
+  /* FOOTER */
+  .footer {
+    padding: 40px; text-align: center; font-size: 12px;
+    color: var(--text-muted); border-top: 1px solid var(--border);
+  }
+
+  /* PRINT */
+  @media print {
+    .lang-toggle { display: none; }
+    .hero { min-height: auto; padding: 40px; }
+    section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body class="show-fr">
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle">
+  <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">Fran&ccedil;ais</button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">English</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-logos">
+      <img referrerpolicy="no-referrer" src="https://chungchunricedog.ca/wp-content/uploads/2025/10/white-outline-logo.png" alt="Chung Chun Rice Dog">
+      <div class="divider"></div>
+      <img referrerpolicy="no-referrer" src="https://static.wixstatic.com/media/112128_b29814c4222e4b7a9a09cf1f3040c3d6~mv2.png/v1/fill/w_260,h_128,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/112128_b29814c4222e4b7a9a09cf1f3040c3d6~mv2.png" alt="Chicken Plus" style="filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(255,255,255,0.6));">
+    </div>
+
+    <div class="hero-badge">
+      <span class="lang-fr inline">Opportunit&eacute; d'acquisition</span>
+      <span class="lang-en inline">Acquisition Opportunity</span>
+    </div>
+
+    <h1>
+      <span class="lang-fr">Chung Chun Rice Dog<br>+ <em>Chicken Plus</em></span>
+      <span class="lang-en">Chung Chun Rice Dog<br>+ <em>Chicken Plus</em></span>
+    </h1>
+
+    <p class="hero-sub">
+      <span class="lang-fr inline">Franchise double banni&egrave;re &eacute;tablie &agrave; Sainte-Foy, Qu&eacute;bec &mdash; en op&eacute;ration depuis 3 ans, incluant la licence Chicken Plus.</span>
+      <span class="lang-en inline">Established dual-brand franchise in Sainte-Foy, Qu&eacute;bec &mdash; operating for 3 years, including Chicken Plus license.</span>
+    </p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">3</div>
+        <div class="hero-stat-label">
+          <span class="lang-fr inline">Ans d'op&eacute;ration</span>
+          <span class="lang-en inline">Years operating</span>
+        </div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">2</div>
+        <div class="hero-stat-label">
+          <span class="lang-fr inline">Banni&egrave;res incluses</span>
+          <span class="lang-en inline">Brands included</span>
+        </div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">~102 K$</div>
+        <div class="hero-stat-label">
+          <span class="lang-fr inline">BAIIA ajust&eacute; (2025)</span>
+          <span class="lang-en inline">Adjusted EBITDA (2025)</span>
+        </div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">957 K$</div>
+        <div class="hero-stat-label">
+          <span class="lang-fr inline">CA 1re ann&eacute;e</span>
+          <span class="lang-en inline">Year 1 Revenue</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BROKER BAR -->
+<div class="broker-bar">
+  <span class="lang-fr inline">Dossier confidentiel &mdash; Pour toute demande d'information, &eacute;crivez &agrave; <a href="mailto:gabrielperazelli@msn.com" style="color: #FF6B35;">gabrielperazelli@msn.com</a></span>
+  <span class="lang-en inline">Confidential listing &mdash; For inquiries, email <a href="mailto:gabrielperazelli@msn.com" style="color: #FF6B35;">gabrielperazelli@msn.com</a></span>
+</div>
+
+<!-- PHOTOS GALLERY -->
+<section>
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-fr inline">Galerie</span>
+      <span class="lang-en inline">Gallery</span>
+    </div>
+    <div class="section-title">
+      <span class="lang-fr">D&eacute;couvrez nos produits</span>
+      <span class="lang-en">Discover Our Products</span>
+    </div>
+
+    <div class="gallery">
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="https://litter.catbox.moe/jv5vpl.jpg" alt="Rice Dog Lifestyle">
+        <div class="gallery-caption">
+          <span class="lang-fr inline">Rice Dog &mdash; L&rsquo;exp&eacute;rience street food cor&eacute;enne</span>
+          <span class="lang-en inline">Rice Dog &mdash; The Korean street food experience</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://litter.catbox.moe/47odg0.jpg" alt="Chicken Rice Bowl">
+        <div class="gallery-caption">
+          <span class="lang-fr inline">Chicken Bowl &mdash; Saveurs fra&icirc;ches et g&eacute;n&eacute;reuses</span>
+          <span class="lang-en inline">Chicken Bowl &mdash; Fresh &amp; generous flavours</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://litter.catbox.moe/xp0laj.jpg" alt="Sauce Drizzle">
+        <div class="gallery-caption">
+          <span class="lang-fr inline">Sauce Signature &mdash; Le finishing touch qui fait tout</span>
+          <span class="lang-en inline">Signature Sauce &mdash; The finishing touch</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://litter.catbox.moe/7e86cx.jpg" alt="Behind the Scenes">
+        <div class="gallery-caption">
+          <span class="lang-fr inline">Artisanal &mdash; Fait maison, chaque jour</span>
+          <span class="lang-en inline">Handcrafted &mdash; Made fresh, every day</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://litter.catbox.moe/bof4gt.jpg" alt="Chicken Plus Promo">
+        <div class="gallery-caption">
+          <span class="lang-fr inline">Chicken Plus &mdash; Poulet frit &agrave; la cor&eacute;enne</span>
+          <span class="lang-en inline">Chicken Plus &mdash; Korean fried chicken</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://litter.catbox.moe/hcvd6p.jpg" alt="Fried Chicken Close-up">
+        <div class="gallery-caption">
+          <span class="lang-fr inline">Croustillant &mdash; Chaque bouch&eacute;e est parfaite</span>
+          <span class="lang-en inline">Crispy &mdash; Every bite is perfection</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHUNG CHUN MENU -->
+<section style="background: var(--surface-2);">
+  <div class="container">
+    <div class="section-label" style="color: var(--accent);">&#127789; Chung Chun Rice Dog</div>
+    <div class="section-title">
+      <span class="lang-fr">Korean Rice Dogs &mdash; Le menu qui fait craquer</span>
+      <span class="lang-en">Korean Rice Dogs &mdash; The Menu That Hooks You</span>
+    </div>
+
+    <div class="food-grid">
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://chungchunricedog.ca/wp-content/uploads/2025/10/imgi_9_original-qsuqfmfpcog7qsqev1e5r4imz38xee1wg4hj5e8u2s.png" alt="Original Rice Dog">
+        <div class="food-card-info">
+          <div class="food-card-name">Original Rice Dog</div>
+          <div class="food-card-price">5,99 $</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://chungchunricedog.ca/wp-content/uploads/2025/10/imgi_5_half-mozarella-qsuqfmfpcog7qsqev1e5r4imz38xee1wg4hj5e8u2s.png" alt="Half Mozzarella">
+        <div class="food-card-info">
+          <div class="food-card-name">Half Mozzarella</div>
+          <div class="food-card-price">7,49 $</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://chungchunricedog.ca/wp-content/uploads/2025/10/imgi_4_gamsung-qsuqfmfpcog7qsqev1e5r4imz38xee1wg4hj5e8u2s.png" alt="Gamsung">
+        <div class="food-card-info">
+          <div class="food-card-name">Gamsung</div>
+          <div class="food-card-price">7,49 $</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://chungchunricedog.ca/wp-content/uploads/2025/10/imgi_6_Ramen-qsuqflhv5uexf6rs0izj6mr6dpdk6oy63zu1o4a890.png" alt="Ramen Rice Dog">
+        <div class="food-card-info">
+          <div class="food-card-name">Ramen Rice Dog</div>
+          <div class="food-card-price">7,49 $</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://chungchunricedog.ca/wp-content/uploads/2025/10/imgi_7_cheddar-cheese-qsuqfndjjihi2ep1pjssbma3kh4am35ms950mo7fwk.png" alt="Cheddar Cheese">
+        <div class="food-card-info">
+          <div class="food-card-name">Cheddar Cheese</div>
+          <div class="food-card-price">7,99 $</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://chungchunricedog.ca/wp-content/uploads/2025/10/imgi_10_Sweet-Potato-qsuqflhv5uexf6rs0izj6mr6dpdk6oy63zu1o4a890.png" alt="Sweet Potato">
+        <div class="food-card-info">
+          <div class="food-card-name">Sweet Potato</div>
+          <div class="food-card-price">7,99 $</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-top: 16px;">
+      <span class="lang-fr">+ Tteokbokki, Combos, Boissons et plus encore &mdash; <a href="https://chungchunricedog.ca/menu/" target="_blank" style="color: var(--accent);">Voir le menu complet</a></span>
+      <span class="lang-en">+ Tteokbokki, Combos, Drinks and more &mdash; <a href="https://chungchunricedog.ca/menu/" target="_blank" style="color: var(--accent);">View full menu</a></span>
+    </p>
+  </div>
+</section>
+
+<!-- CHICKEN PLUS MENU -->
+<section>
+  <div class="container">
+    <div class="section-label" style="color: var(--gold);">&#127831; Chicken Plus</div>
+    <div class="section-title">
+      <span class="lang-fr">Poulet frit cor&eacute;en &mdash; La licence incluse dans l'acquisition</span>
+      <span class="lang-en">Korean Fried Chicken &mdash; License Included in the Acquisition</span>
+    </div>
+
+    <div class="food-grid">
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://static.wixstatic.com/media/e40258_de3c2812f876465ba025d6279f42a5d6~mv2.png/v1/fit/w_600,h_600,q_90,enc_avif,quality_auto/e40258_de3c2812f876465ba025d6279f42a5d6~mv2.png" alt="Fried Chicken" style="background: #FFF5E6;">
+        <div class="food-card-info">
+          <div class="food-card-name">Original Fried Chicken</div>
+          <div class="food-card-price">18,99 $</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://static.wixstatic.com/media/e40258_db77f6a53da44c4393afc254c2cf0b41~mv2.png/v1/fit/w_600,h_600,q_90,enc_avif,quality_auto/e40258_db77f6a53da44c4393afc254c2cf0b41~mv2.png" alt="Yangnyeom Chicken" style="background: #FFF5E6;">
+        <div class="food-card-info">
+          <div class="food-card-name">Yangnyeom Chicken</div>
+          <div class="food-card-price">19,99 $</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://static.wixstatic.com/media/e40258_01e4660cde0b48369c93208cb5674478~mv2.png/v1/fit/w_600,h_600,q_90,enc_avif,quality_auto/e40258_01e4660cde0b48369c93208cb5674478~mv2.png" alt="Soy Garlic Chicken" style="background: #FFF5E6;">
+        <div class="food-card-info">
+          <div class="food-card-name">Soy Garlic Chicken</div>
+          <div class="food-card-price">19,99 $</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://static.wixstatic.com/media/e40258_4712b757c7e34e3d970252a679f61a1b~mv2.png/v1/fit/w_600,h_600,q_90,enc_avif,quality_auto/e40258_4712b757c7e34e3d970252a679f61a1b~mv2.png" alt="Snowing Cheese Chicken" style="background: #FFF5E6;">
+        <div class="food-card-info">
+          <div class="food-card-name">Snowing Cheese Chicken</div>
+          <div class="food-card-price">19,99 $</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://static.wixstatic.com/media/e40258_9868ffbcfb744ff1a5e179f79ed9ee2f~mv2.png/v1/fit/w_600,h_600,q_90,enc_avif,quality_auto/e40258_9868ffbcfb744ff1a5e179f79ed9ee2f~mv2.png" alt="Boneless Chicken" style="background: #FFF5E6;">
+        <div class="food-card-info">
+          <div class="food-card-name">Boneless Chicken</div>
+          <div class="food-card-price">18,99 $</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img referrerpolicy="no-referrer" src="https://static.wixstatic.com/media/e40258_0e4185de83544228a96e517feb53b092~mv2.png/v1/fit/w_480,h_480,q_75,enc_avif,quality_auto/e40258_0e4185de83544228a96e517feb53b092~mv2.png" alt="Tteokbokki" style="background: #FFF5E6;">
+        <div class="food-card-info">
+          <div class="food-card-name">Tteokbokki</div>
+          <div class="food-card-price">13,99 $</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-top: 16px;">
+      <span class="lang-fr">+ Frites Plus+, Deep Fried, Accompagnements et plus &mdash; <a href="https://www.chickenpluscanada.ca/menu" target="_blank" style="color: var(--gold);">Voir le menu complet</a></span>
+      <span class="lang-en">+ Plus+ Fries, Deep Fried, Sides and more &mdash; <a href="https://www.chickenpluscanada.ca/menu" target="_blank" style="color: var(--gold);">View full menu</a></span>
+    </p>
+  </div>
+</section>
+
+<!-- DOUBLE BANNIÈRE -->
+<section style="background: var(--surface-2);">
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-fr inline">Concept</span>
+      <span class="lang-en inline">Concept</span>
+    </div>
+    <div class="section-title">
+      <span class="lang-fr">Deux marques, un local : maximiser les revenus</span>
+      <span class="lang-en">Two Brands, One Location: Maximizing Revenue</span>
+    </div>
+
+    <div class="brand-row">
+      <div class="brand-card cc">
+        <h3>&#127789; Chung Chun Rice Dog</h3>
+        <div class="stat-row">
+          <span class="stat-label">
+            <span class="lang-fr inline">Produit phare</span>
+            <span class="lang-en inline">Flagship product</span>
+          </span>
+          <span class="stat-value">Korean Rice Dog</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">
+            <span class="lang-fr inline">Panier moyen</span>
+            <span class="lang-en inline">Avg. ticket</span>
+          </span>
+          <span class="stat-value">5 &ndash; 9 $</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Format</span>
+          <span class="stat-value">Grab &amp; Go + Delivery</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">
+            <span class="lang-fr inline">Cible</span>
+            <span class="lang-en inline">Target</span>
+          </span>
+          <span class="stat-value">
+            <span class="lang-fr inline">&Eacute;tudiants, jeunes, familles</span>
+            <span class="lang-en inline">Students, youth, families</span>
+          </span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">
+            <span class="lang-fr inline">Succursales</span>
+            <span class="lang-en inline">Locations</span>
+          </span>
+          <span class="stat-value">300+
+            <span class="lang-fr inline">dans le monde</span>
+            <span class="lang-en inline">worldwide</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="brand-card cp">
+        <h3>&#127831; Chicken Plus</h3>
+        <div class="stat-row">
+          <span class="stat-label">
+            <span class="lang-fr inline">Produit phare</span>
+            <span class="lang-en inline">Flagship product</span>
+          </span>
+          <span class="stat-value">
+            <span class="lang-fr inline">Poulet frit cor&eacute;en</span>
+            <span class="lang-en inline">Korean Fried Chicken</span>
+          </span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">
+            <span class="lang-fr inline">Panier moyen</span>
+            <span class="lang-en inline">Avg. ticket</span>
+          </span>
+          <span class="stat-value">12 &ndash; 20 $</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Format</span>
+          <span class="stat-value">Dine-in + Delivery</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">
+            <span class="lang-fr inline">Cible</span>
+            <span class="lang-en inline">Target</span>
+          </span>
+          <span class="stat-value">
+            <span class="lang-fr inline">Jeunes actifs, groupes</span>
+            <span class="lang-en inline">Young adults, groups</span>
+          </span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">
+            <span class="lang-fr inline">Succursales</span>
+            <span class="lang-en inline">Locations</span>
+          </span>
+          <span class="stat-value">500+
+            <span class="lang-fr inline">dans le monde</span>
+            <span class="lang-en inline">worldwide</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section>
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-fr inline">Chiffres cl&eacute;s</span>
+      <span class="lang-en inline">Key Figures</span>
+    </div>
+    <div class="section-title">
+      <span class="lang-fr">Pourquoi cette opportunit&eacute;</span>
+      <span class="lang-en">Why This Opportunity</span>
+    </div>
+
+    <div class="highlights">
+      <div class="highlight-card">
+        <div class="highlight-icon">&#128200;</div>
+        <div class="highlight-value">957 K$</div>
+        <div class="highlight-label">
+          <span class="lang-fr inline">CA premi&egrave;re ann&eacute;e (Chung Chun seul)</span>
+          <span class="lang-en inline">Year 1 revenue (Chung Chun only)</span>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#128176;</div>
+        <div class="highlight-value">~102 K$</div>
+        <div class="highlight-label">
+          <span class="lang-fr inline">BAIIA ajust&eacute; 2024-2025</span>
+          <span class="lang-en inline">Adjusted EBITDA 2024-2025</span>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#127891;</div>
+        <div class="highlight-value">55 000+</div>
+        <div class="highlight-label">
+          <span class="lang-fr inline">&Eacute;tudiants &agrave; l'Universit&eacute; Laval</span>
+          <span class="lang-en inline">Students at Universit&eacute; Laval</span>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#128205;</div>
+        <div class="highlight-value">3</div>
+        <div class="highlight-label">
+          <span class="lang-fr inline">Ans d'exploitation &eacute;tablie</span>
+          <span class="lang-en inline">Years of established operations</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSTRUIRE VS ACHETER -->
+<section style="background: var(--surface-2);">
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-fr inline">Analyse</span>
+      <span class="lang-en inline">Analysis</span>
+    </div>
+    <div class="section-title">
+      <span class="lang-fr">Pourquoi acheter plut&ocirc;t que construire</span>
+      <span class="lang-en">Why Buy Rather Than Build</span>
+    </div>
+
+    <div class="info-block">
+      <h3>
+        <span class="lang-fr">Construire vs acheter</span>
+        <span class="lang-en">Build vs. Buy</span>
+      </h3>
+      <p>
+        <span class="lang-fr">Ouvrir un restaurant &agrave; partir de z&eacute;ro co&ucirc;te <strong>environ 300 000 $</strong> au Qu&eacute;bec (construction, am&eacute;nagement, &eacute;quipement de cuisine, syst&egrave;mes informatiques, caisses, cam&eacute;ras, syst&egrave;me de son, frais de franchise, fonds de roulement, signalisation et permis) &mdash; et il faut compter 3 &agrave; 6 mois de chantier avant la premi&egrave;re vente.</span>
+        <span class="lang-en">Opening a restaurant from scratch costs <strong>approximately $300,000</strong> in Qu&eacute;bec (construction, fit-out, kitchen equipment, IT systems, POS, security cameras, sound system, franchise fees, working capital, signage and permits) &mdash; plus 3 to 6 months of build-out before the first sale.</span>
+      </p>
+      <p>
+        <span class="lang-fr">Ici, pour le m&ecirc;me montant, l'acqu&eacute;reur obtient un <strong>restaurant cl&eacute; en main, d&eacute;j&agrave; en op&eacute;ration depuis 3 ans</strong>, avec une client&egrave;le &eacute;tablie, un BAIIA d&eacute;montr&eacute;, des &eacute;quipements en place, deux licences de franchise et <strong>z&eacute;ro d&eacute;lai</strong> avant de g&eacute;n&eacute;rer des revenus.</span>
+        <span class="lang-en">Here, for the same amount, the buyer gets a <strong>turnkey restaurant, already operating for 3 years</strong>, with an established customer base, proven EBITDA, equipment in place, two franchise licenses and <strong>zero delay</strong> before generating revenue.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLACEMENT -->
+<section>
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-fr inline">Emplacement</span>
+      <span class="lang-en inline">Location</span>
+    </div>
+    <div class="section-title">
+      <span class="lang-fr">Sainte-Foy : le c&oelig;ur &eacute;tudiant de Qu&eacute;bec</span>
+      <span class="lang-en">Sainte-Foy: Qu&eacute;bec City's Student Hub</span>
+    </div>
+
+    <div class="info-block">
+      <h3>2750 Chemin Sainte-Foy, Qu&eacute;bec, QC G1V 1V6</h3>
+      <p>
+        <span class="lang-fr">&Agrave; proximit&eacute; directe de l'<strong>Universit&eacute; Laval</strong> (55 000+ &eacute;tudiants, 10 000 employ&eacute;s), des centres commerciaux majeurs (Place Sainte-Foy, Place Laurier, Place de la Cit&eacute;) et de l'a&eacute;roport international Jean-Lesage. Un p&ocirc;le d'attraction r&eacute;gional qui g&eacute;n&egrave;re un flux de consommateurs constant.</span>
+        <span class="lang-en">Steps from <strong>Universit&eacute; Laval</strong> (55,000+ students, 10,000 staff), major malls (Place Sainte-Foy, Place Laurier, Place de la Cit&eacute;) and Jean-Lesage International Airport. A regional hub generating a constant flow of consumers.</span>
+      </p>
+    </div>
+
+    <div class="highlights" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="highlight-card">
+        <div class="highlight-icon">&#127979;</div>
+        <div class="highlight-value">55 K+</div>
+        <div class="highlight-label">
+          <span class="lang-fr inline">&Eacute;tudiants Universit&eacute; Laval</span>
+          <span class="lang-en inline">Universit&eacute; Laval students</span>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#127961;</div>
+        <div class="highlight-value">826 K</div>
+        <div class="highlight-label">
+          <span class="lang-fr inline">Population de Qu&eacute;bec</span>
+          <span class="lang-en inline">Qu&eacute;bec City population</span>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#128722;</div>
+        <div class="highlight-value">3</div>
+        <div class="highlight-label">
+          <span class="lang-fr inline">Centres commerciaux majeurs</span>
+          <span class="lang-en inline">Major shopping centers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUI EST INCLUS -->
+<section style="background: var(--surface-2);">
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-fr inline">Inclus dans l'acquisition</span>
+      <span class="lang-en inline">Included in the Acquisition</span>
+    </div>
+    <div class="section-title">
+      <span class="lang-fr">Ce que vous obtenez</span>
+      <span class="lang-en">What You Get</span>
+    </div>
+
+    <div class="highlights" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+      <div class="highlight-card">
+        <div class="highlight-icon">&#127973;</div>
+        <div class="highlight-label" style="font-size: 14px; color: var(--text); font-weight: 600;">
+          <span class="lang-fr">Restaurant cl&eacute; en main</span>
+          <span class="lang-en">Turnkey restaurant</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+          <span class="lang-fr">&Eacute;quipements, am&eacute;nagements, syst&egrave;mes en place</span>
+          <span class="lang-en">Equipment, fit-out, systems in place</span>
+        </p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#127789;</div>
+        <div class="highlight-label" style="font-size: 14px; color: var(--text); font-weight: 600;">
+          <span class="lang-fr">Franchise Chung Chun Rice Dog</span>
+          <span class="lang-en">Chung Chun Rice Dog franchise</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">300+
+          <span class="lang-fr">adresses dans le monde</span>
+          <span class="lang-en">locations worldwide</span>
+        </p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#127831;</div>
+        <div class="highlight-label" style="font-size: 14px; color: var(--text); font-weight: 600;">
+          <span class="lang-fr">Licence Chicken Plus</span>
+          <span class="lang-en">Chicken Plus license</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">500+
+          <span class="lang-fr">succursales mondiales</span>
+          <span class="lang-en">locations worldwide</span>
+        </p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#128101;</div>
+        <div class="highlight-label" style="font-size: 14px; color: var(--text); font-weight: 600;">
+          <span class="lang-fr">Client&egrave;le &eacute;tablie</span>
+          <span class="lang-en">Established customer base</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+          <span class="lang-fr">3 ans d'op&eacute;rations, pr&eacute;sence livraison</span>
+          <span class="lang-en">3 years of operations, delivery presence</span>
+        </p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#128640;</div>
+        <div class="highlight-label" style="font-size: 14px; color: var(--text); font-weight: 600;">
+          <span class="lang-fr">Potentiel de croissance</span>
+          <span class="lang-en">Growth potential</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+          <span class="lang-fr">Chicken Plus non encore activ&eacute; sur place</span>
+          <span class="lang-en">Chicken Plus not yet activated on-site</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container">
+    <div class="cta-box">
+      <p style="font-size: 28px; font-weight: 800; margin-bottom: 8px;">250 000 $</p>
+      <h3>
+        <span class="lang-fr">Int&eacute;ress&eacute;?</span>
+        <span class="lang-en">Interested?</span>
+      </h3>
+      <p>
+        <span class="lang-fr">Cette opportunit&eacute; est disponible d&egrave;s maintenant. &Eacute;crivez-nous pour obtenir le dossier financier complet et planifier une visite.</span>
+        <span class="lang-en">This opportunity is available now. Email us to receive the full financial package and schedule a visit.</span>
+      </p>
+      <p style="font-size: 14px; opacity: 1; color: rgba(255,255,255,0.9); margin-top: 8px;">
+        &#128205; 2750 Ch. Sainte-Foy, Qu&eacute;bec, QC G1V 1V6<br>
+        &#9993;&#65039; <a href="mailto:gabrielperazelli@msn.com" style="color: #FF6B35; text-decoration: none; font-weight: 600;">gabrielperazelli@msn.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL COMMERCIAL - ACHETEURS ALTERNATIFS -->
+<section style="background: var(--surface-2);">
+  <div class="container">
+    <div class="section-label" style="color: var(--green);">
+      <span class="lang-fr inline">&#128205; Aussi disponible</span>
+      <span class="lang-en inline">&#128205; Also Available</span>
+    </div>
+    <div class="section-title">
+      <span class="lang-fr">Le local seul &mdash; sans obligation de franchise</span>
+      <span class="lang-en">The Commercial Space &mdash; No Franchise Obligation</span>
+    </div>
+
+    <div class="info-block" style="border-left: 4px solid var(--green);">
+      <p>
+        <span class="lang-fr">Vous &ecirc;tes int&eacute;ress&eacute; par l'emplacement mais pas n&eacute;cessairement par l'exploitation des bannières Chung Chun ou Chicken Plus? Le local commercial est &eacute;galement disponible pour un acheteur souhaitant y op&eacute;rer un concept diff&eacute;rent.</span>
+        <span class="lang-en">Interested in the location but not necessarily in operating the Chung Chun or Chicken Plus brands? The commercial space is also available for a buyer wishing to operate a different concept.</span>
+      </p>
+    </div>
+
+    <div class="highlights" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 24px;">
+      <div class="highlight-card">
+        <div class="highlight-icon">&#127970;</div>
+        <div class="highlight-label" style="font-size: 14px; color: var(--text); font-weight: 600;">
+          <span class="lang-fr">Emplacement strat&eacute;gique</span>
+          <span class="lang-en">Strategic Location</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+          <span class="lang-fr">2750 ch. Sainte-Foy, suite 138 &mdash; tr&egrave;s fort achalandage, proximit&eacute; p&ocirc;le hospitalier</span>
+          <span class="lang-en">2750 Ch. Sainte-Foy, suite 138 &mdash; very high foot traffic, near major hospital hub</span>
+        </p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#128176;</div>
+        <div class="highlight-label" style="font-size: 14px; color: var(--text); font-weight: 600;">
+          <span class="lang-fr">Loyer avantageux</span>
+          <span class="lang-en">Competitive Rent</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+          <span class="lang-fr">Conditions de bail favorables pour le secteur</span>
+          <span class="lang-en">Favourable lease terms for the area</span>
+        </p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#128295;</div>
+        <div class="highlight-label" style="font-size: 14px; color: var(--text); font-weight: 600;">
+          <span class="lang-fr">Am&eacute;nagement en place</span>
+          <span class="lang-en">Fully Built-Out</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+          <span class="lang-fr">&Eacute;quipements de cuisine, ventilation, plomberie commerciale d&eacute;j&agrave; install&eacute;s</span>
+          <span class="lang-en">Kitchen equipment, ventilation, commercial plumbing already installed</span>
+        </p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">&#127919;</div>
+        <div class="highlight-label" style="font-size: 14px; color: var(--text); font-weight: 600;">
+          <span class="lang-fr">Cl&eacute; en main</span>
+          <span class="lang-en">Turnkey</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+          <span class="lang-fr">Enti&egrave;rement op&eacute;rationnel &mdash; pr&ecirc;t pour votre concept</span>
+          <span class="lang-en">Fully operational &mdash; ready for your concept</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="info-block" style="margin-top: 24px; background: var(--surface); padding: 20px; border-radius: 12px; border-left: 4px solid var(--green);">
+      <p style="font-size: 15px; font-weight: 600; margin-bottom: 8px;">
+        <span class="lang-fr">&#128200; Potentiel</span>
+        <span class="lang-en">&#128200; Potential</span>
+      </p>
+      <p>
+        <span class="lang-fr">Opportunit&eacute; d'optimisation des op&eacute;rations et de croissance significative du chiffre d'affaires. Achalandage constant (sur place et livraison) gr&acirc;ce &agrave; la proximit&eacute; du p&ocirc;le hospitalier et des centres commerciaux.</span>
+        <span class="lang-en">Opportunity to optimize operations and achieve significant revenue growth. Constant foot traffic (dine-in and delivery) thanks to proximity to the hospital hub and shopping centres.</span>
+      </p>
+    </div>
+
+    <div style="margin-top: 24px; padding: 20px; background: var(--surface); border-radius: 12px; text-align: center;">
+      <p style="font-size: 20px; font-weight: 700; color: var(--green);">250 000 $</p>
+      <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
+        <span class="lang-fr">Dossier complet disponible sur demande (informations financi&egrave;res et d&eacute;tails d'exploitation)</span>
+        <span class="lang-en">Full package available on request (financial information and operational details)</span>
+      </p>
+      <p style="margin-top: 12px; font-size: 14px;">
+        <strong>Gabriel Perazelli</strong><br>
+        &#9993;&#65039; <a href="mailto:gabrielperazelli@msn.com" style="color: var(--green); text-decoration: none; font-weight: 600;">gabrielperazelli@msn.com</a><br>
+        &#128222; <a href="tel:5146179777" style="color: var(--green); text-decoration: none; font-weight: 600;">514 617-9777</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- LINKS -->
+<section style="padding: 40px 0;">
+  <div class="container" style="text-align: center;">
+    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+      <span class="lang-fr">En savoir plus sur les marques :</span>
+      <span class="lang-en">Learn more about the brands:</span>
+    </p>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <a href="https://chungchunricedog.ca/" target="_blank" style="padding: 10px 24px; border: 1px solid var(--border); border-radius: 100px; text-decoration: none; color: var(--accent); font-weight: 600; font-size: 14px;">chungchunricedog.ca</a>
+      <a href="https://www.chickenpluscanada.ca/" target="_blank" style="padding: 10px 24px; border: 1px solid var(--border); border-radius: 100px; text-decoration: none; color: var(--gold); font-weight: 600; font-size: 14px;">chickenpluscanada.ca</a>
+
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <span class="lang-fr">Document pr&eacute;par&eacute; en avril 2026 &middot; Sources : &Eacute;tats financiers compil&eacute;s par Ahmed Hoummane CPA, Chungchun Rice Dog Canada, Chicken Plus Canada, Universit&eacute; Laval &middot; Ce document est confidentiel et destin&eacute; aux acqu&eacute;reurs potentiels uniquement.</span>
+  <span class="lang-en">Document prepared April 2026 &middot; Sources: Financial statements compiled by Ahmed Hoummane CPA, Chungchun Rice Dog Canada, Chicken Plus Canada, Universit&eacute; Laval &middot; This document is confidential and intended for potential buyers only.</span>
+</div>
+
+<script>
+function setLang(lang) {
+  document.body.classList.remove('show-fr', 'show-en');
+  document.body.classList.add('show-' + lang);
+  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+</script>
+
+</body>
+</html>
